@@ -1,13 +1,13 @@
-package dat3.openai_demo;
+package dat3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OpenaiGettingStartedApplication {
+public class programEksamenApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(OpenaiGettingStartedApplication.class, args);
+    SpringApplication.run(programEksamenApplication.class, args);
   }
 
 }

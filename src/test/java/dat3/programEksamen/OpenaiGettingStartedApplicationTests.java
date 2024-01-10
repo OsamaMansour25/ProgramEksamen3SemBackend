@@ -1,4 +1,4 @@
-package dat3.openai_demo;
+package dat3.programEksamen;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
