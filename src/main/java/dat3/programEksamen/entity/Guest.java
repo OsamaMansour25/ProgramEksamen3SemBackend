@@ -30,6 +30,7 @@ public class Guest {
         created = LocalDateTime.now();
     }
 
+
     @PreUpdate
     public void onUpdate() {
         updated = LocalDateTime.now();

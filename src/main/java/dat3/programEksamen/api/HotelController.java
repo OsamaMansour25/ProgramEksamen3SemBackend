@@ -37,7 +37,7 @@ public class HotelController {
         return hotelService.updateHotel(hotelRequest, id);
     }
     @DeleteMapping("{id}")
-    public void deleteReservation(@PathVariable int id){
+    public void deleteHotel(@PathVariable int id){
         hotelService.deleteHotel(id);
     }
 }

@@ -10,10 +10,11 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "Users")
-public class User {
+public class User  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String email;
     String password;
+
 }

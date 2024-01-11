@@ -5,6 +5,7 @@ import dat3.programEksamen.Repository.HotelRepository;
 import dat3.programEksamen.Repository.ReservationRepository;
 import dat3.programEksamen.Repository.RoomRepository;
 import dat3.programEksamen.dtos.HotelResponse;
+import dat3.programEksamen.entity.Guest;
 import dat3.programEksamen.entity.Hotel;
 import dat3.programEksamen.entity.Room;
 import dat3.programEksamen.service.HotelService;
@@ -36,6 +37,7 @@ public class DeveloperData implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
       //  setupHotels();
+        setupGuests();
 HotelResponse hotelResponse = hotelService.getHotelById(1);
         System.out.println(hotelResponse.getName());
     }
@@ -69,5 +71,27 @@ HotelResponse hotelResponse = hotelService.getHotelById(1);
             }
         }
 
+    }
+    public void setupGuests() {
+        // Opretter og gemmer to gæster
+        Guest guest1 = new Guest();
+        guest1.setUsername("guestUser1");
+        guest1.setFirstName("John");
+        guest1.setLastName("Doe");
+        guest1.setEmail("johndoe@example.com");
+        guest1.setPhoneNumber(12345678); // Brug et realistisk telefonnummer
+        guest1.setCreated(LocalDateTime.now());
+        guest1.setUpdated(LocalDateTime.now());
+        guestRepository.save(guest1);
+
+        Guest guest2 = new Guest();
+        guest2.setUsername("guestUser2");
+        guest2.setFirstName("Jane");
+        guest2.setLastName("Doe");
+        guest2.setEmail("janedoe@example.com");
+        guest2.setPhoneNumber(87654321); // Brug et realistisk telefonnummer
+        guest2.setCreated(LocalDateTime.now());
+        guest2.setUpdated(LocalDateTime.now());
+        guestRepository.save(guest2);
     }
 }

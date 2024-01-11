@@ -63,6 +63,7 @@ public class HotelService {
         editHotel.setCountry(body.getCountry());
         editHotel.setUpdated(LocalDateTime.now());
 
+
         return new HotelResponse(hotelRepository.save(editHotel));
     }
     public void deleteHotel(int id) {
