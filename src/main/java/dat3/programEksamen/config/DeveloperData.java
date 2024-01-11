@@ -38,8 +38,7 @@ public class DeveloperData implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
       //  setupHotels();
         setupGuests();
-HotelResponse hotelResponse = hotelService.getHotelById(1);
-        System.out.println(hotelResponse.getName());
+
     }
 
     public void setupHotels() {

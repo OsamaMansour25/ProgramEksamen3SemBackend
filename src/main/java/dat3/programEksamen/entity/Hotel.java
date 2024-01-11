@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -23,8 +24,8 @@ public class Hotel {
     String city;
     int zip;
     String country;
-    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Room> rooms;
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Room> rooms = new ArrayList<>();
 
     LocalDateTime created;
     LocalDateTime updated;
