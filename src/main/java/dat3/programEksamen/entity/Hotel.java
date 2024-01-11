@@ -23,7 +23,7 @@ public class Hotel {
     String city;
     int zip;
     String country;
-    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Room> rooms;
 
     LocalDateTime created;

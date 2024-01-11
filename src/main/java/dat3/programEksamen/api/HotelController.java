@@ -28,5 +28,16 @@ public class HotelController {
     public HotelResponse createHotel(@RequestBody HotelRequest hotelRequest) {
         return hotelService.createHotel(hotelRequest);
     }
-
+    @GetMapping("/{id}")
+    public HotelResponse getHotelById(@PathVariable int id){
+        return hotelService.getHotelById(id);
+    }
+    @PutMapping("{id}")
+    public HotelResponse updateHotel(@PathVariable int id, @RequestBody HotelRequest hotelRequest){
+        return hotelService.updateHotel(hotelRequest, id);
+    }
+    @DeleteMapping("{id}")
+    public void deleteReservation(@PathVariable int id){
+        hotelService.deleteHotel(id);
+    }
 }

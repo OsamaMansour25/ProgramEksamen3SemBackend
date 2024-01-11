@@ -4,13 +4,16 @@ import dat3.programEksamen.Repository.GuestRepository;
 import dat3.programEksamen.Repository.HotelRepository;
 import dat3.programEksamen.Repository.ReservationRepository;
 import dat3.programEksamen.Repository.RoomRepository;
+import dat3.programEksamen.dtos.HotelResponse;
 import dat3.programEksamen.entity.Hotel;
 import dat3.programEksamen.entity.Room;
+import dat3.programEksamen.service.HotelService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.Random;
 
 @Controller
@@ -19,18 +22,22 @@ public class DeveloperData implements ApplicationRunner {
     HotelRepository hotelRepository;
     ReservationRepository reservationRepository;
     RoomRepository roomRepository;
+    HotelService hotelService;
 
     public DeveloperData(GuestRepository guestRepository, HotelRepository hotelRepository, ReservationRepository reservationRepository,
-                         RoomRepository roomRepository) {
+                         RoomRepository roomRepository, HotelService hotelService) {
         this.guestRepository = guestRepository;
         this.hotelRepository = hotelRepository;
         this.reservationRepository = reservationRepository;
         this.roomRepository = roomRepository;
+        this.hotelService = hotelService;
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        setupHotels();
+      //  setupHotels();
+HotelResponse hotelResponse = hotelService.getHotelById(1);
+        System.out.println(hotelResponse.getName());
     }
 
     public void setupHotels() {
@@ -61,5 +68,6 @@ public class DeveloperData implements ApplicationRunner {
                 roomRepository.save(room);
             }
         }
+
     }
 }
