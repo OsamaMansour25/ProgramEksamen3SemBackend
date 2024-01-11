@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dat3</groupId>
-    <artifactId>programEksamen</artifactId>
+    <artifactId>programEksamenBackend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>openai-getting-started</name>
     <description>openai-getting-started</description>
