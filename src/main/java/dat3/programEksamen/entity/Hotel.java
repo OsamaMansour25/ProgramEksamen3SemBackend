@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -22,6 +23,9 @@ public class Hotel {
     String city;
     int zip;
     String country;
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Room> rooms;
+
     LocalDateTime created;
     LocalDateTime updated;
     @PrePersist

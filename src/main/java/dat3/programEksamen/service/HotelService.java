@@ -6,6 +6,9 @@ import dat3.programEksamen.dtos.HotelResponse;
 import dat3.programEksamen.entity.Hotel;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class HotelService {
     HotelRepository hotelRepository;
@@ -33,6 +36,12 @@ public class HotelService {
         hotelResponse.setCountry(hotel.getCountry());
         hotelResponse.setCreated(hotel.getCreated());
         hotelResponse.setUpdated(hotel.getUpdated());
+        hotelResponse.setNumberOfRooms(hotel.getRooms().size());
         return hotelResponse;
     }
+    public List<HotelResponse> getAllHotels() {
+        List<Hotel> hotels = hotelRepository.findAll();
+        return hotels.stream().map(this::convertToResponse).collect(Collectors.toList());
+    }
+
 }

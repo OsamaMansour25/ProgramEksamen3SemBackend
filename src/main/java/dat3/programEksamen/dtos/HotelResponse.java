@@ -16,6 +16,7 @@ public class HotelResponse {
     private String city;
     private int zip;
     private String country;
+    private int numberOfRooms;
     private LocalDateTime created;
     private LocalDateTime updated;
 }
