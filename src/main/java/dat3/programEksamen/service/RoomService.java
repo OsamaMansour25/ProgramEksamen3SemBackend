@@ -26,9 +26,9 @@ public class RoomService {
         room.setNumberOfBeds(2);
 
         room.setHotel(hotel);
-        roomRepository.save(room);
+      Room savedRoom = roomRepository.save(room);
 
-        return convertToResponse(room);
+        return convertToResponse(savedRoom);
     }
     public RoomResponse convertToResponse(Room room) {
         RoomResponse roomResponse = new RoomResponse();
