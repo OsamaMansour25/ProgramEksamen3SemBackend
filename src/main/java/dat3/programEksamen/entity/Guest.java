@@ -24,4 +24,15 @@ public class Guest {
     int phoneNumber;
     LocalDateTime created;
     LocalDateTime updated;
+
+    @PrePersist
+    public void onCreate() {
+        created = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void onUpdate() {
+        updated = LocalDateTime.now();
+
+    }
 }

@@ -24,4 +24,14 @@ public class Hotel {
     String country;
     LocalDateTime created;
     LocalDateTime updated;
+    @PrePersist
+    public void onCreate() {
+        created = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void onUpdate() {
+        updated = LocalDateTime.now();
+    }
+
 }

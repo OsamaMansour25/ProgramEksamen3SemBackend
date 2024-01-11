@@ -30,7 +30,7 @@ public class DeveloperData implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        setupHotels();
+        // setupHotels();
     }
 
     public void setupHotels() {
